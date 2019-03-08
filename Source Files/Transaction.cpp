@@ -4,26 +4,24 @@
 
 Transaction::Transaction()
 {
-	std::cout << "Transaction Created";
 }
 
 
 Transaction::~Transaction()
 {
-	std::cout << "Transaction Destroyed";
 }
 
 void Transaction::start()
 {
-	std::cout << "Start Called";
+	std::cout << "Start Called\n" ;
 }
 
 void Transaction::commit()
 {
-	std::cout << "Commit Called";
+	std::cout << "Commit Called\n";
 }
 
 void Transaction::abort()
 {
-	std::cout << "Abort Called";
+	std::cout << "Abort Called" << std::endl;
 }

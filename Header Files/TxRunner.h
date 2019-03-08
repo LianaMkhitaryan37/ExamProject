@@ -9,7 +9,7 @@ public:
 	TxRunner(Database& db);
 	~TxRunner();
 	template <typename FUNCTION>
-	void runTransactional(FUNCTION fun);
+	void runTransactional(FUNCTION fun, const std::string& index = "tread_0");
 private:
 	Database & m_db;
 	std::map<std::string, Transaction> data_;
@@ -17,11 +17,10 @@ private:
 };
 
 template<typename FUNCTION>
-inline void TxRunner::runTransactional(FUNCTION fun)
+inline void TxRunner::runTransactional(FUNCTION fun,const std::string& index)
 {
-	static TxRunner::i = 0;
-	std::string index = "tread_" + std::to_string(i);
-	if (data_.find(index) != data_.end()) {
+
+	if (data_.find(index) == data_.end()) {
 		data_[index] = Transaction();
 		data_[index].start();
 	}
