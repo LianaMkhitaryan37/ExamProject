@@ -1,19 +1,16 @@
-#include "stdafx.h"
 #include "Transaction.h"
 #include <iostream>
 
 Transaction::Transaction()
 {
 }
-
-
 Transaction::~Transaction()
 {
 }
 
 void Transaction::start()
 {
-	std::cout << "Start Called\n" ;
+	std::cout << "Start Called\n";
 }
 
 void Transaction::commit()
@@ -23,5 +20,5 @@ void Transaction::commit()
 
 void Transaction::abort()
 {
-	std::cout << "Abort Called" << std::endl;
+	std::cout << "Abort Called\n" << std::endl;
 }

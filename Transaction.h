@@ -1,4 +1,6 @@
 #pragma once
+#pragma once
+#include "Database.h"
 class Transaction
 {
 public:
@@ -13,4 +15,3 @@ public:
 	/// Aborts a started TX. Illegal to call if TX was not yet started or is already committed/aborted.
 	void abort();
 };
-

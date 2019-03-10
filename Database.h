@@ -5,4 +5,3 @@ public:
 	Database();
 	~Database();
 };
-
