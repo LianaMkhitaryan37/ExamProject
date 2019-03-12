@@ -16,7 +16,7 @@ void Database::write(size_t key, double  elem)
 		}
 		return;
 	}
-	throw "Transaction is READ ONLY" ;
+	throw std::runtime_error("Transaction is READ ONLY" );
 }
 
 void Database::read(size_t key)

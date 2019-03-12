@@ -9,8 +9,7 @@ Transaction::Transaction(Database * db_ptr, Access a)
 }
 Transaction::~Transaction()
 {
-	m_db->access_.erase(std::this_thread::get_id());
-	m_db = nullptr;
+ 
 }
 
 void Transaction::start()

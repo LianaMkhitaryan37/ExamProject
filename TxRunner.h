@@ -33,7 +33,7 @@ inline void TxRunner::runTransactional(FUNCTION fun, Access perm ,Args... arg)
 	if (data_.find(index) == data_.end()) {
 
 		std::lock_guard<std::mutex> lock(safe_Tread);
-		static Transaction mb(&m_db, perm);
+		Transaction mb(&m_db, perm);
 		data_.emplace( index,mb);
 		ptr = &data_[index];
 		ptr->start();
